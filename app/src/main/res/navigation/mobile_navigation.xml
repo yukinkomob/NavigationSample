@@ -22,10 +22,14 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_talk"
         android:name="com.example.navigationsample.ui.talk.TalkFragment"
         android:label="@string/title_talk"
-        tools:layout="@layout/fragment_talk" />
+        tools:layout="@layout/fragment_talk" >
+        <action
+            android:id="@+id/action_navigation_talk_to_talkRoomFragment"
+            app:destination="@id/talkRoomFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_my_page"
@@ -47,4 +51,9 @@
         android:name="com.example.navigationsample.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/talkRoomFragment"
+        android:name="com.example.navigationsample.TalkRoomFragment"
+        android:label="fragment_talk_room"
+        tools:layout="@layout/fragment_talk_room" />
 </navigation>
