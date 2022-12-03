@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.navigationsample.R
 import com.example.navigationsample.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -23,7 +25,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -31,6 +33,16 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+
+        binding.notifButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_notificationItemsFragment2)
+        }
+        binding.searchButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_searchFragment)
+        }
+        binding.profileButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_profileFragment)
         }
         return root
     }

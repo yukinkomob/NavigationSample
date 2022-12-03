@@ -5,4 +5,9 @@
     <string name="title_my_page">MyPage</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nofification_title">nofitication</string>
+    <string name="search_title">search</string>
+    <string name="profile_title">profile</string>
+    <string name="talk_title">talk</string>
+    <string name="talk_room_title">talk room</string>
 </resources>

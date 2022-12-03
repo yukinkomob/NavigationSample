@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.navigationsample.R
 import com.example.navigationsample.databinding.FragmentTalkBinding
 
 class TalkFragment : Fragment() {
@@ -31,6 +33,10 @@ class TalkFragment : Fragment() {
         val textView: TextView = binding.textDashboard
         talkViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+
+        binding.button.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_talk_to_talkRoomFragment)
         }
         return root
     }
